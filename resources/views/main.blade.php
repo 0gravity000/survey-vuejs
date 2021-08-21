@@ -1,27 +1,19 @@
 @extends('layouts.appvue')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <example-component></example-component>
-        <main-component></main-component>
-        <sub-component></sub-component>
-
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container pt-1">
+    <div class="row">
+        <div class="col">
+            <main-header htitle="Main"></main-header>
+        </div>  <!-- col -->
+    </div>  <!-- row -->
+    <div class="row">
+        <div class="col-3">
+            <main-left-sidebar></main-left-sidebar>
+        </div>  <!-- col -->
+        <div class="col">
+            <main-content></main-content>
+        </div>  <!-- col -->
+    </div>  <!-- row -->
 </div>
 @endsection
