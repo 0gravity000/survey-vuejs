@@ -1,21 +1,37 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Main Component</div>
+    <div class="container pt-1">
+        <div class="row">
+            <div class="col">
+                <main-header :htitle="page"></main-header>
+            </div>  <!-- col -->
+        </div>  <!-- row -->
+        <div class="row">
+            <div class="col-3">
+                <main-left-sidebar @clickedSampleVifPage="showSampleVifPage"></main-left-sidebar>
+            </div>  <!-- col -->
+            <div class="col">
+                <main-content></main-content>
 
-                    <div class="card-body">
-                        I'm an mains component.
-                    </div>
-                </div>
-            </div>
-        </div>
+                <sample-vif></sample-vif>
+
+            </div>  <!-- col -->
+        </div>  <!-- row -->
     </div>
 </template>
 
 <script>
     export default {
+        data: function(){
+            return {
+                page: 'main'
+            } 
+        },
+        methods: {
+            showSampleVifPage(page){
+                this.page = page;
+                //alert(page);
+            }
+        },        
         mounted() {
             console.log('Component mounted.')
         }

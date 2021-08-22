@@ -32,6 +32,8 @@ Vue.component('main-content', require('./components/MainContent.vue').default);
 //var MainRightSidebar = require('./components/MainRightSidebar.vue').default;
 //var MainContent = require('./components/MainContent.vue').default;
 
+var SampleVif = require('./components/SampleVif.vue').default;
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -40,12 +42,7 @@ Vue.component('main-content', require('./components/MainContent.vue').default);
 
 const app = new Vue({
     el: '#app',
-    /*
     components: {
-        'main-header': MainHeader,
-        'main-left-sidebar': MainLeftSidebar,
-        'main-right-sidebar': MainRightSidebar,
-        'main-content': MainContent,
+        'sample-vif': SampleVif,
       }
-    */
 });
