@@ -2016,7 +2016,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      page: 'main'
+      page: 'Main'
     };
   },
   methods: {
@@ -2108,8 +2108,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -38135,34 +38133,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("ul", { staticClass: "list-group" }, [
+  return _c("div", { staticClass: "sidebarbtn" }, [
+    _c("button", { on: { click: _vm.clickSampleVifPage } }, [
+      _vm._v("サンプル v-if")
+    ]),
+    _vm._v(" "),
     _c(
       "button",
-      { staticClass: "list-group-item", on: { click: _vm.clickSampleVifPage } },
-      [_vm._v("Sample v-if")]
+      { on: { click: _vm.clickSampleParentChildCommunicationPage } },
+      [_vm._v("サンプル 親->子コンポーネント受け渡し")]
     ),
     _vm._v(" "),
     _c(
       "button",
-      {
-        staticClass: "list-group-item",
-        on: { click: _vm.clickSampleParentChildCommunicationPage }
-      },
-      [_vm._v("Sample Parent->ChildCommunication")]
-    ),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        staticClass: "list-group-item",
-        on: { click: _vm.clickSampleChildParentCommunicationPage }
-      },
-      [_vm._v("Sample Child->ParentCommunication")]
-    ),
-    _vm._v(" "),
-    _c("li", { staticClass: "list-group-item" }, [_vm._v("A fourth item")]),
-    _vm._v(" "),
-    _c("li", { staticClass: "list-group-item" }, [_vm._v("And a fifth one")])
+      { on: { click: _vm.clickSampleChildParentCommunicationPage } },
+      [_vm._v("サンプル 子->親コンポーネント受け渡し")]
+    )
   ])
 }
 var staticRenderFns = []
@@ -38252,7 +38238,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("p", [_vm._v("Sample Parent->Childe Communication")])
+  return _c("p", [_vm._v("Sample Parent->Child Communication")])
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -1,5 +1,5 @@
 <template>
-    <p>Sample Parent->Childe Communication</p>
+    <p>Sample Parent->Child Communication</p>
 </template>
 
 <script>

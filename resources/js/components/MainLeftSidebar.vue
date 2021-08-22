@@ -1,11 +1,9 @@
 <template>
-    <ul class="list-group">
-    <button class="list-group-item" @click="clickSampleVifPage">Sample v-if</button>
-    <button class="list-group-item" @click="clickSampleParentChildCommunicationPage">Sample Parent->ChildCommunication</button>
-    <button class="list-group-item" @click="clickSampleChildParentCommunicationPage">Sample Child->ParentCommunication</button>
-    <li class="list-group-item">A fourth item</li>
-    <li class="list-group-item">And a fifth one</li>
-    </ul>
+    <div class="sidebarbtn">
+        <button @click="clickSampleVifPage">サンプル v-if</button>
+        <button @click="clickSampleParentChildCommunicationPage">サンプル 親->子コンポーネント受け渡し</button>
+        <button @click="clickSampleChildParentCommunicationPage">サンプル 子->親コンポーネント受け渡し</button>
+    </div>
 </template>
 
 <script>

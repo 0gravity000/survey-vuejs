@@ -27,7 +27,7 @@
     export default {
         data: function(){
             return {
-                page: 'main'
+                page: 'Main'
             } 
         },
         methods: {
