@@ -9,6 +9,11 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- highlight -->
+    <link rel="stylesheet" href="{{ asset('css/github-dark.min.css') }}">
+    <script src="{{ asset('js/highlight.min.js') }}"></script>
+    <script src="{{ asset('js/highlightjs-vue.min.js') }}"></script>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -19,6 +24,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/surveyvuejs.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">

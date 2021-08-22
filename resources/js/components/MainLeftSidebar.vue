@@ -19,11 +19,11 @@
                 this.$emit('clickedSamplePage', this.page);
             },
             clickSampleParentChildCommunicationPage(){
-                this.page = 'Sample Parent->ChildCommunication';
+                this.page = 'サンプル 親->子コンポーネント受け渡し';
                 this.$emit('clickedSamplePage', this.page);
             },
             clickSampleChildParentCommunicationPage(){
-                this.page = 'Sample Child->ParentCommunication';
+                this.page = 'サンプル 子->親コンポーネント受け渡し';
                 this.$emit('clickedSamplePage', this.page);
             },
         },

@@ -1,11 +1,12 @@
 <template>
-    <pre>
+    <highlightjs language='html'
+        code="
         //--- 子コンポーネント：MainLeftSidebar.vue ---
         //子コンポーネントでイベント発生させる
         //v-on:clickの省略形　@click
         &lt;template&gt;
-            &lt;div class="sidebarbtn"&gt;
-                &lt;button @click="clickSampleChildParentCommunicationPage"&gt;サンプル 子-&gt;親コンポーネント受け渡し&lt;/button&gt;
+            &lt;div class=&quot;sidebarbtn&quot;&gt;
+                &lt;button @click=&quot;clickSampleChildParentCommunicationPage&quot;&gt;サンプル 子-&gt;親コンポーネント受け渡し&lt;/button&gt;
             &lt;/div&gt;
         &lt;/template&gt;
 
@@ -26,12 +27,11 @@
             }
         &lt;/script&gt;
 
-
         //--- 親コンポーネント：MainComponent.vue ---
         //子コンポーネントで$emitしたイベントを親コンポーネントで受け取る
         &lt;template&gt;
             &lt;main-left-sidebar 
-                @clickedSamplePage="showSamplePage"
+                @clickedSamplePage=&quot;showSamplePage&quot;
             &gt;
             &lt;/main-left-sidebar&gt;
         &lt;/template&gt;
@@ -52,11 +52,8 @@
                 },        
             }
         &lt;/script&gt;
-
-
-
-
-    </pre>
+    ">
+    </highlightjs>
 
 </template>
 

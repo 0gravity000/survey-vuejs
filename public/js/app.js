@@ -2015,7 +2015,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2131,11 +2130,11 @@ __webpack_require__.r(__webpack_exports__);
       this.$emit('clickedSamplePage', this.page);
     },
     clickSampleParentChildCommunicationPage: function clickSampleParentChildCommunicationPage() {
-      this.page = 'Sample Parent->ChildCommunication';
+      this.page = 'サンプル 親->子コンポーネント受け渡し';
       this.$emit('clickedSamplePage', this.page);
     },
     clickSampleChildParentCommunicationPage: function clickSampleChildParentCommunicationPage() {
-      this.page = 'Sample Child->ParentCommunication';
+      this.page = 'サンプル 子->親コンポーネント受け渡し';
       this.$emit('clickedSamplePage', this.page);
     }
   },
@@ -2242,9 +2241,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2262,6 +2258,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -38107,11 +38105,11 @@ var render = function() {
         [
           _vm.page === "Main" ? _c("main-content") : _vm._e(),
           _vm._v(" "),
-          _vm.page === "Sample Parent->ChildCommunication"
+          _vm.page === "サンプル 親->子コンポーネント受け渡し"
             ? _c("sample-parent-child-communication")
             : _vm._e(),
           _vm._v(" "),
-          _vm.page === "Sample Child->ParentCommunication"
+          _vm.page === "サンプル 子->親コンポーネント受け渡し"
             ? _c("sample-child-parent-communication")
             : _vm._e(),
           _vm._v(" "),
@@ -38318,11 +38316,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("pre", [
-    _vm._v(
-      "    //--- 子コンポーネント：MainLeftSidebar.vue ---\n    //子コンポーネントでイベント発生させる\n    //v-on:clickの省略形　@click\n    <template>\n        <div class=\"sidebarbtn\">\n            <button @click=\"clickSampleChildParentCommunicationPage\">サンプル 子->親コンポーネント受け渡し</button>\n        </div>\n    </template>\n\n    //子コンポーネントで$emitして親コンポーネントにイベントを送る\n    <script>\n        export default {\n            data: function(){\n                return {\n                    page: 'Main'\n                } \n            },\n            methods: {\n                clickSampleChildParentCommunicationPage(){\n                    this.page = 'Sample Child->ParentCommunication';\n                    this.$emit('clickedSamplePage', this.page);\n                },\n            },\n        }\n    </script>\n\n\n    //--- 親コンポーネント：MainComponent.vue ---\n    //子コンポーネントで$emitしたイベントを親コンポーネントで受け取る\n    <template>\n        <main-left-sidebar \n            @clickedSamplePage=\"showSamplePage\"\n        >\n        </main-left-sidebar>\n    </template>\n\n    //親コンポーネントで受け取ったイベントに応じて処理を行う\n    <script>\n        export default {\n            data: function(){\n                return {\n                    page: 'Main'\n                } \n            },\n            methods: {\n                showSamplePage(page){\n                    this.page = page;\n                    //alert(page);\n                },\n            },        \n        }\n    </script>\n\n\n\n\n"
-    )
-  ])
+  return _c("highlightjs", {
+    attrs: {
+      language: "html",
+      code:
+        "\n    //--- 子コンポーネント：MainLeftSidebar.vue ---\n    //子コンポーネントでイベント発生させる\n    //v-on:clickの省略形　@click\n    <template>\n        <div class=\"sidebarbtn\">\n            <button @click=\"clickSampleChildParentCommunicationPage\">サンプル 子->親コンポーネント受け渡し</button>\n        </div>\n    </template>\n\n    //子コンポーネントで$emitして親コンポーネントにイベントを送る\n    <script>\n        export default {\n            data: function(){\n                return {\n                    page: 'Main'\n                } \n            },\n            methods: {\n                clickSampleChildParentCommunicationPage(){\n                    this.page = 'Sample Child->ParentCommunication';\n                    this.$emit('clickedSamplePage', this.page);\n                },\n            },\n        }\n    </script>\n\n    //--- 親コンポーネント：MainComponent.vue ---\n    //子コンポーネントで$emitしたイベントを親コンポーネントで受け取る\n    <template>\n        <main-left-sidebar \n            @clickedSamplePage=\"showSamplePage\"\n        >\n        </main-left-sidebar>\n    </template>\n\n    //親コンポーネントで受け取ったイベントに応じて処理を行う\n    <script>\n        export default {\n            data: function(){\n                return {\n                    page: 'Main'\n                } \n            },\n            methods: {\n                showSamplePage(page){\n                    this.page = page;\n                    //alert(page);\n                },\n            },        \n        }\n    </script>\n"
+    }
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38346,13 +38346,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("pre", [
-    _vm._v(
-      '//--- 親コンポーネント：MainComponent.vue ---\n//親コンポーネントで子コンポーネントタグにb-vindを入れて、子コンポーネントへデータを送る\n//v-bind:htitleの省略形　:htitle\n<template>\n    <main-header :htitle="page"></main-header>\n</template>\n\n//親コンポーネントのdataオプションでpageを作っておく\n<script>\n    export default {\n        data: function(){\n            return {\n                page: \'Main\'\n            } \n        },\n    }\n</script>\n\n//--- 子コンポーネント：MainHeader.vue ---\n//子コンポーネントで親コンポーネントから受け取ったデータを表示\n<template>\n    <a class="navbar-brand" href="#">' +
-        _vm._s(_vm.htitle) +
-        "</a>\n</template>\n\n//子コンポーネントではpropsで親コンポーネントからデータを受け取る\n<script>\n    export default {\n        props: {\n            htitle: {\n                type: String,\n                required: true\n            }\n        },\n        /*\n        data: function(){\n            return {\n                htitle: ''\n            } \n        },\n    }\n</script>\n\n"
-    )
-  ])
+  return _c("highlightjs", {
+    attrs: {
+      language: "html",
+      code:
+        '\n    //--- 親コンポーネント：MainComponent.vue ---\n    //親コンポーネントで子コンポーネントタグにb-vindを入れて、子コンポーネントへデータを送る\n    //v-bind:htitleの省略形　:htitle\n    <template>\n        <main-header :htitle="page"></main-header>\n    </template>\n\n    //親コンポーネントのdataオプションでpageを作っておく\n    <script>\n        export default {\n            data: function(){\n                return {\n                    page: \'Main\'\n                } \n            },\n        }\n    </script>\n\n    //--- 子コンポーネント：MainHeader.vue ---\n    //子コンポーネントで親コンポーネントから受け取ったデータを表示\n    <template>\n        <a class="navbar-brand" href="#">｛｛ htitle ｝｝</a>\n    </template>\n\n    //子コンポーネントではpropsで親コンポーネントからデータを受け取る\n    <script>\n        export default {\n            props: {\n                htitle: {\n                    type: String,\n                    required: true\n                }\n            },\n            /*\n            data: function(){\n                return {\n                    htitle: \'\'\n                } \n            },\n        }\n    </script>\n'
+    }
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -50682,7 +50682,9 @@ Vue.component('main-content', __webpack_require__(/*! ./components/MainContent.v
 Vue.component('sample-vif', __webpack_require__(/*! ./components/SampleVif.vue */ "./resources/js/components/SampleVif.vue")["default"]); //var SampleVif = require('./components/SampleVif.vue').default;
 
 Vue.component('sample-parent-child-communication', __webpack_require__(/*! ./components/SampleParentChildCommunication.vue */ "./resources/js/components/SampleParentChildCommunication.vue")["default"]);
-Vue.component('sample-child-parent-communication', __webpack_require__(/*! ./components/SampleChildParentCommunication.vue */ "./resources/js/components/SampleChildParentCommunication.vue")["default"]);
+Vue.component('sample-child-parent-communication', __webpack_require__(/*! ./components/SampleChildParentCommunication.vue */ "./resources/js/components/SampleChildParentCommunication.vue")["default"]); //highlight-vue.js
+
+Vue.use(hljsVuePlugin);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

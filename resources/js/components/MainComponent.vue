@@ -17,10 +17,9 @@
             <div class="col">
                 <!-- content -->
                 <main-content v-if="page === 'Main'"></main-content>
-                <sample-parent-child-communication v-if="page === 'Sample Parent->ChildCommunication'"></sample-parent-child-communication>
-                <sample-child-parent-communication v-if="page === 'Sample Child->ParentCommunication'"></sample-child-parent-communication>
+                <sample-parent-child-communication v-if="page === 'サンプル 親->子コンポーネント受け渡し'"></sample-parent-child-communication>
+                <sample-child-parent-communication v-if="page === 'サンプル 子->親コンポーネント受け渡し'"></sample-child-parent-communication>
                 <sample-vif v-if="page === 'Sample v-if'"></sample-vif>
-
             </div>  <!-- col -->
         </div>  <!-- row -->
     </div>

@@ -37,6 +37,9 @@ Vue.component('sample-vif', require('./components/SampleVif.vue').default);
 Vue.component('sample-parent-child-communication', require('./components/SampleParentChildCommunication.vue').default);
 Vue.component('sample-child-parent-communication', require('./components/SampleChildParentCommunication.vue').default);
 
+//highlight-vue.js
+Vue.use(hljsVuePlugin);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
