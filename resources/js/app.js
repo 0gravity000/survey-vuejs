@@ -32,7 +32,8 @@ Vue.component('main-content', require('./components/MainContent.vue').default);
 //var MainRightSidebar = require('./components/MainRightSidebar.vue').default;
 //var MainContent = require('./components/MainContent.vue').default;
 
-var SampleVif = require('./components/SampleVif.vue').default;
+Vue.component('sample-vif', require('./components/SampleVif.vue').default);
+//var SampleVif = require('./components/SampleVif.vue').default;
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -42,7 +43,9 @@ var SampleVif = require('./components/SampleVif.vue').default;
 
 const app = new Vue({
     el: '#app',
+    /*
     components: {
         'sample-vif': SampleVif,
       }
+    */
 });

@@ -10,9 +10,9 @@
                 <main-left-sidebar @clickedSampleVifPage="showSampleVifPage"></main-left-sidebar>
             </div>  <!-- col -->
             <div class="col">
-                <main-content></main-content>
+                <main-content v-if="page === 'main'"></main-content>
 
-                <sample-vif></sample-vif>
+                <sample-vif  v-if="page === 'sample v-if'"></sample-vif>
 
             </div>  <!-- col -->
         </div>  <!-- row -->

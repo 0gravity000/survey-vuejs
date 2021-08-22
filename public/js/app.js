@@ -37948,7 +37948,11 @@ var render = function() {
       _c(
         "div",
         { staticClass: "col" },
-        [_c("main-content"), _vm._v(" "), _c("sample-vif")],
+        [
+          _vm.page === "main" ? _c("main-content") : _vm._e(),
+          _vm._v(" "),
+          _vm.page === "sample v-if" ? _c("sample-vif") : _vm._e()
+        ],
         1
       )
     ])
@@ -50451,19 +50455,22 @@ Vue.component('main-content', __webpack_require__(/*! ./components/MainContent.v
 //var MainRightSidebar = require('./components/MainRightSidebar.vue').default;
 //var MainContent = require('./components/MainContent.vue').default;
 
-var SampleVif = __webpack_require__(/*! ./components/SampleVif.vue */ "./resources/js/components/SampleVif.vue")["default"];
+Vue.component('sample-vif', __webpack_require__(/*! ./components/SampleVif.vue */ "./resources/js/components/SampleVif.vue")["default"]); //var SampleVif = require('./components/SampleVif.vue').default;
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-
 var app = new Vue({
-  el: '#app',
+  el: '#app'
+  /*
   components: {
-    'sample-vif': SampleVif
-  }
+      'sample-vif': SampleVif,
+    }
+  */
+
 });
 
 /***/ }),
