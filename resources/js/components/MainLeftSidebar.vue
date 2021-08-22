@@ -1,8 +1,8 @@
 <template>
     <div class="sidebarbtn">
-        <button @click="clickSampleVifPage">サンプル v-if</button>
         <button @click="clickSampleParentChildCommunicationPage">サンプル 親->子コンポーネント受け渡し</button>
         <button @click="clickSampleChildParentCommunicationPage">サンプル 子->親コンポーネント受け渡し</button>
+        <button @click="clickSampleVifPage">サンプル v-if</button>
     </div>
 </template>
 
@@ -10,7 +10,7 @@
     export default {
         data: function(){
             return {
-                page: 'main'
+                page: 'Main'
             } 
         },
         methods: {

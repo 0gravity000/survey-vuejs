@@ -2013,6 +2013,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2119,7 +2122,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      page: 'main'
+      page: 'Main'
     };
   },
   methods: {
@@ -2184,6 +2187,64 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2201,6 +2262,49 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -38003,15 +38107,15 @@ var render = function() {
         [
           _vm.page === "Main" ? _c("main-content") : _vm._e(),
           _vm._v(" "),
-          _vm.page === "Sample v-if" ? _c("sample-vif") : _vm._e(),
-          _vm._v(" "),
           _vm.page === "Sample Parent->ChildCommunication"
             ? _c("sample-parent-child-communication")
             : _vm._e(),
           _vm._v(" "),
           _vm.page === "Sample Child->ParentCommunication"
             ? _c("sample-child-parent-communication")
-            : _vm._e()
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.page === "Sample v-if" ? _c("sample-vif") : _vm._e()
         ],
         1
       )
@@ -38134,10 +38238,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "sidebarbtn" }, [
-    _c("button", { on: { click: _vm.clickSampleVifPage } }, [
-      _vm._v("サンプル v-if")
-    ]),
-    _vm._v(" "),
     _c(
       "button",
       { on: { click: _vm.clickSampleParentChildCommunicationPage } },
@@ -38148,7 +38248,11 @@ var render = function() {
       "button",
       { on: { click: _vm.clickSampleChildParentCommunicationPage } },
       [_vm._v("サンプル 子->親コンポーネント受け渡し")]
-    )
+    ),
+    _vm._v(" "),
+    _c("button", { on: { click: _vm.clickSampleVifPage } }, [
+      _vm._v("サンプル v-if")
+    ])
   ])
 }
 var staticRenderFns = []
@@ -38214,7 +38318,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("p", [_vm._v("Sample Childe->Parent Communication")])
+  return _c("pre", [
+    _vm._v(
+      "    //--- 子コンポーネント：MainLeftSidebar.vue ---\n    //子コンポーネントでイベント発生させる\n    //v-on:clickの省略形　@click\n    <template>\n        <div class=\"sidebarbtn\">\n            <button @click=\"clickSampleChildParentCommunicationPage\">サンプル 子->親コンポーネント受け渡し</button>\n        </div>\n    </template>\n\n    //子コンポーネントで$emitして親コンポーネントにイベントを送る\n    <script>\n        export default {\n            data: function(){\n                return {\n                    page: 'Main'\n                } \n            },\n            methods: {\n                clickSampleChildParentCommunicationPage(){\n                    this.page = 'Sample Child->ParentCommunication';\n                    this.$emit('clickedSamplePage', this.page);\n                },\n            },\n        }\n    </script>\n\n\n    //--- 親コンポーネント：MainComponent.vue ---\n    //子コンポーネントで$emitしたイベントを親コンポーネントで受け取る\n    <template>\n        <main-left-sidebar \n            @clickedSamplePage=\"showSamplePage\"\n        >\n        </main-left-sidebar>\n    </template>\n\n    //親コンポーネントで受け取ったイベントに応じて処理を行う\n    <script>\n        export default {\n            data: function(){\n                return {\n                    page: 'Main'\n                } \n            },\n            methods: {\n                showSamplePage(page){\n                    this.page = page;\n                    //alert(page);\n                },\n            },        \n        }\n    </script>\n\n\n\n\n"
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38238,7 +38346,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("p", [_vm._v("Sample Parent->Child Communication")])
+  return _c("pre", [
+    _vm._v(
+      '//--- 親コンポーネント：MainComponent.vue ---\n//親コンポーネントで子コンポーネントタグにb-vindを入れて、子コンポーネントへデータを送る\n//v-bind:htitleの省略形　:htitle\n<template>\n    <main-header :htitle="page"></main-header>\n</template>\n\n//親コンポーネントのdataオプションでpageを作っておく\n<script>\n    export default {\n        data: function(){\n            return {\n                page: \'Main\'\n            } \n        },\n    }\n</script>\n\n//--- 子コンポーネント：MainHeader.vue ---\n//子コンポーネントで親コンポーネントから受け取ったデータを表示\n<template>\n    <a class="navbar-brand" href="#">' +
+        _vm._s(_vm.htitle) +
+        "</a>\n</template>\n\n//子コンポーネントではpropsで親コンポーネントからデータを受け取る\n<script>\n    export default {\n        props: {\n            htitle: {\n                type: String,\n                required: true\n            }\n        },\n        /*\n        data: function(){\n            return {\n                htitle: ''\n            } \n        },\n    }\n</script>\n\n"
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
