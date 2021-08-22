@@ -34,6 +34,8 @@ Vue.component('main-content', require('./components/MainContent.vue').default);
 
 Vue.component('sample-vif', require('./components/SampleVif.vue').default);
 //var SampleVif = require('./components/SampleVif.vue').default;
+Vue.component('sample-parent-child-communication', require('./components/SampleParentChildCommunication.vue').default);
+Vue.component('sample-child-parent-communication', require('./components/SampleChildParentCommunication.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
